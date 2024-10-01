@@ -61,31 +61,29 @@ const MyReservationsPage = () => {
                 </div>
 
                 <div className="col-span-1 md:col-span-3">
-                <h2 className="mb-4 text-xl">Property Title</h2>
+                    <h2 className="mb-4 text-xl">Property Title</h2>
 
-                <p className="mb-2">
-                    <strong>Check in date:</strong> 14/2/2024
-                </p>
-                <p className="mb-2">
-                    <strong>Check out date:</strong> 20/2/2024
-                </p>
+                    <p className="mb-2">
+                        <strong>Check in date:</strong> 14/2/2024
+                    </p>
+                    <p className="mb-2">
+                        <strong>Check out date:</strong> 20/2/2024
+                    </p>
 
-                <p className="mb-2">
-                    <strong>Number of nights:</strong> 4
-                </p>
-                <p className="mb-2">
-                    <strong>Total price:</strong> $880
-                </p>
+                    <p className="mb-2">
+                        <strong>Number of nights:</strong> 4
+                    </p>
+                    <p className="mb-2">
+                        <strong>Total price:</strong> $880
+                    </p>
 
-                <Link 
-                    href=""
-                    className="mt-6 inline-block cursor-pointer py-4 px-6 bg-airbnb text-white rounded-xl"
-                >
-                    Go to property
-                </Link>
-
+                    <Link 
+                        href=""
+                        className="mt-6 inline-block cursor-pointer py-4 px-6 bg-airbnb text-white rounded-xl"
+                    >
+                        Go to property
+                    </Link>
                 </div>
-
             </div>
         </div>
 
