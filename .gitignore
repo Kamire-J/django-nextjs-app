@@ -1,0 +1,91 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment directories
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# VSCode workspace settings
+.vscode/
+
+# PyCharm project files
+.idea/
+
+# MacOS system files
+.DS_Store
+
+# Log files
+*.log
+
+# Local development tools
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# C extensions
+*.so
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Install scripts
+*.sh
+
+# Test coverage results
+htmlcov/
+.tox/
+.nox/
+coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre
+.pyre/
+
+# Pytype static type checker
+.pytype/
+
+# Celery beat schedule file
+celerybeat-schedule
+
+# SQLite database files
+*.sqlite3
+
+# Flask instance folder
+instance/
+
+# Static files cache
+staticfiles/
+
+# Scrapy
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# pytest cache
+.pytest_cache/
+
+# Environments from conda
+*.conda
+*.env
+*.yml
