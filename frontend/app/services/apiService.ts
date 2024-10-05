@@ -1,8 +1,11 @@
+import { getAccessToken } from "../lib/actions";
 
 
 const apiService = {
     get: async function (url: string): Promise<any> {
         console.log('GET request to:', url);
+
+        const token = await getAccessToken();
 
         return new Promise((resolve, reject) => {
             fetch(`${process.env.NEXT_PUBLIC_API_HOST}${url}`, {
@@ -10,6 +13,7 @@ const apiService = {
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json',
+                    'Authorization':`Bearer ${token}`
                 }
             })
             .then(response => response.json())
@@ -26,6 +30,7 @@ const apiService = {
 
     post: async function(url: string, data: any) : Promise<any> {
         console.log('post', url, data);
+        const token = await getAccessToken();
 
         return new Promise((resolve, reject) => {
             fetch(`${process.env.NEXT_PUBLIC_API_HOST}${url}`, {
@@ -34,6 +39,7 @@ const apiService = {
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json',
+                    'Authorization':`Bearer ${token}`
                 }
             })
             .then(response => response.json())

@@ -8,7 +8,6 @@ import React from "react";
 
 
 const LogoutButton: React.FC = () => {
-    console.log('logout button clicked')
     const router = useRouter();
     const submitLogout = async () => {
         resetAuthCookies();
