@@ -2,16 +2,17 @@ import Image from 'next/image'
 import React from 'react'
 import { PropertyType } from './PropertyList'
 import { useRouter } from 'next/navigation';
+import FavoriteButton from '../FavoriteButton';
 
 interface PropertyProps {
-  id: string;
   property:PropertyType;
-  title: string;
-  price_per_night: number;
-  image_url: string;
+  markFavorite?:(is_favorite: boolean) => void;
+  
 }
 
-const PropertyListItem: React.FC<PropertyProps> = ({property}) => {
+const PropertyListItem: React.FC<PropertyProps> = ({
+  property, 
+  markFavorite}) => {
   const router = useRouter();
   return (
     <div 
@@ -27,6 +28,13 @@ const PropertyListItem: React.FC<PropertyProps> = ({property}) => {
           priority={false}
           alt='Beach House'
           />
+          {markFavorite && (
+            <FavoriteButton 
+              id = {property.id}
+              is_favorite={property.is_favorite}
+              markFavorite={(is_favorite) => markFavorite}
+            />
+          )}
       </div>
       <div className="mt-2">
         <p className="text-lg font-bold">{property.title}</p>

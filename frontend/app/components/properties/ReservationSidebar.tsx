@@ -54,7 +54,7 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
                 const response = await apiService.post(`/api/properties/${property.id}/book/`, formData);
 
                 if (response.success) {
-                    console.log('Bookin successful')
+                    console.log('Booking successful')
                 } else {
                     console.log('Something went wrong...');
                 }

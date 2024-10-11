@@ -85,6 +85,7 @@ INSTALLED_APPS = [
     # local Apps
     'useraccount',
     'property',
+    'chat',
 ]
 
 MIDDLEWARE = [
@@ -133,6 +134,27 @@ DATABASES = {
 
     }
 }
+
+# Check if PostgreSQL is available
+try:
+    # Attempt to connect to the PostgreSQL database
+    connection = psycopg2.connect(
+        dbname=SQL_DATABASE,
+        user=SQL_USER,
+        password=SQL_PASSWORD,
+        host=SQL_HOST,
+        port=SQL_PORT,
+    )
+    connection.close()  # Close the connection if successful
+except Exception as e:
+    print(f"PostgreSQL not available: {e}. Falling back to SQLite.")
+    # If the connection fails, fallback to SQLite
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),  # SQLite database file
+        }
+    }
 
 
 # Password validation

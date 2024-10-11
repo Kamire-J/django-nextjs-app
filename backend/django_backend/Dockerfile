@@ -1,4 +1,4 @@
-FROM python:3.12.2-slim-bullseye
+FROM python:3.12-slim-bullseye
 
 WORKDIR /usr/src/django_backend
 
