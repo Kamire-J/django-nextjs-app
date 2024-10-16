@@ -19,7 +19,7 @@ export async function handleRefresh() {
     })
         .then(response => response.json())
         .then((json) => {
-            console.log('Response - Refresh:', json);
+            //console.log('Response - Refresh:', json);
 
             if (json.access) {
                 cookies().set('session_access_token', json.access, {

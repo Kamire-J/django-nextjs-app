@@ -23,6 +23,12 @@ SITE_ID = 1
 
 WEBSITE_URL = os.environ.get("WEBSITE_URL")
 
+CHANNEL_LAYERS = {
+    'default':{
+        'BACKEND': 'channels.layers.InMemoryChannelLayer',
+    }
+}
+
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
@@ -62,6 +68,7 @@ REST_AUTH = {
 # Application definition
 
 INSTALLED_APPS = [
+    'daphne',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -118,6 +125,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'django_backend.wsgi.application'
+ASGI_APPLICATION = 'django_backend.asgi.application'
 
 
 # Database
@@ -135,26 +143,26 @@ DATABASES = {
     }
 }
 
-# Check if PostgreSQL is available
-try:
-    # Attempt to connect to the PostgreSQL database
-    connection = psycopg2.connect(
-        dbname=SQL_DATABASE,
-        user=SQL_USER,
-        password=SQL_PASSWORD,
-        host=SQL_HOST,
-        port=SQL_PORT,
-    )
-    connection.close()  # Close the connection if successful
-except Exception as e:
-    print(f"PostgreSQL not available: {e}. Falling back to SQLite.")
-    # If the connection fails, fallback to SQLite
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),  # SQLite database file
-        }
-    }
+# # Check if PostgreSQL is available
+# try:
+#     # Attempt to connect to the PostgreSQL database
+#     connection = psycopg2.connect(
+#         dbname=SQL_DATABASE,
+#         user=SQL_USER,
+#         password=SQL_PASSWORD,
+#         host=SQL_HOST,
+#         port=SQL_PORT,
+#     )
+#     connection.close()  # Close the connection if successful
+# except Exception as e:
+#     print(f"PostgreSQL not available: {e}. Falling back to SQLite.")
+#     # If the connection fails, fallback to SQLite
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),  # SQLite database file
+#         }
+#     }
 
 
 # Password validation

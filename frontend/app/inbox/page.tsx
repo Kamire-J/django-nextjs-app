@@ -26,20 +26,21 @@ const InboxPage = async () => {
     }
 
     const conversations = await apiService.get('/api/chat/')
-    console.log('Conversations:', conversations);
+    //console.log('Conversations:', conversations);
 
     return (
         <main className="max-w-[1500px] mx-auto px-6 pb-6 space-y-4">
             <h1 className="my-6 text-2xl">Inbox</h1>
 
-            {/* {conversations.map((conversation: ConversationType) => {
+            {conversations.map((conversation: ConversationType) => {
                 return (
                     <Conversation 
+                        key={conversation.id}
                         userId={userId}
                         conversation={conversation}
                     />
                 )
-            })} */}
+            })}
         </main>
     )
 }

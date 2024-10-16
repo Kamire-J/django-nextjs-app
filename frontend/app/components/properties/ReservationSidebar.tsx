@@ -40,7 +40,7 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
     const guestsRange = Array.from({ length: property.guests }, (_, index) => index + 1)
 
     const performBooking = async () => {
-        console.log('performBooking', userId);
+        //console.log('performBooking', userId);
 
         if (userId) {
             if (dateRange.startDate && dateRange.endDate) {
@@ -153,13 +153,13 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
             </div>
 
             <div className="mb-4 flex justify-between align-center">
-                <p>${property.price_per_night} * {nights} nights</p>
+                <p>${property.price_per_night} * {nights} night(s)</p>
 
                 <p>${property.price_per_night * nights}</p>
             </div>
 
             <div className="mb-4 flex justify-between align-center">
-                <p>Djangobnb fee</p>
+                <p>Platform Fee</p>
 
                 <p>${fee}</p>
             </div>
