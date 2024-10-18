@@ -31,7 +31,7 @@ const Categories = () => {
             className={`pb-4 flex flex-col items-center space-y-2 border-b-2 ${category == ''? 'border-black': 'border-white'} opacity-60 hover:border-gray-200 hover:opacity-100`}>
             <Image 
                 src="/icn_category_beach.jpeg"
-                alt="Category - Beach"
+                alt="Category - All"
                 width={20}
                 height={20}
             />
@@ -41,7 +41,7 @@ const Categories = () => {
             onClick={() => _setCategory('Beach')}
             className={`pb-4 flex flex-col items-center space-y-2 border-b-2 ${category == 'Beach' ? 'border-black' : 'border-white'} opacity-60 hover:border-gray-200 hover:opacity-100`}>
             <Image 
-                src="/icn_category_beach.jpeg"
+                src="/beach.png"
                 alt="Category - Beach"
                 width={20}
                 height={20}
@@ -53,7 +53,7 @@ const Categories = () => {
             className={`pb-4 flex flex-col items-center space-y-2 border-b-2 ${category == 'Tiny Homes' ? 'border-black' : 'border-white'} opacity-60 hover:border-gray-200 hover:opacity-100`}>
             <Image 
                 src="/tiny_homes.jpg"
-                alt="Category - Beach"
+                alt="Category - Tiny Homes"
                 width={20}
                 height={20}
             />
@@ -64,11 +64,44 @@ const Categories = () => {
             className={`pb-4 flex flex-col items-center space-y-2 border-b-2 ${category == 'Villas' ? 'border-black' : 'border-white'} opacity-60 hover:border-gray-200 hover:opacity-100`}>
             <Image 
                 src="/icn_category_beach.jpeg"
-                alt="Category - Beach"
+                alt="Category - Villas"
                 width={20}
                 height={20}
             />
             <span className="text-xs">Villas</span>
+        </div>
+        <div 
+            onClick={() => _setCategory('Cabins')}
+            className={`pb-4 flex flex-col items-center space-y-2 border-b-2 ${category == 'Cabins' ? 'border-black' : 'border-white'} opacity-60 hover:border-gray-200 hover:opacity-100`}>
+            <Image 
+                src="/shed_809097.png"
+                alt="Category - Cabins"
+                width={20}
+                height={20}
+            />
+            <span className="text-xs">Cabins</span>
+        </div>
+        <div 
+            onClick={() => _setCategory('Camping')}
+            className={`pb-4 flex flex-col items-center space-y-2 border-b-2 ${category == 'Camping' ? 'border-black' : 'border-white'} opacity-60 hover:border-gray-200 hover:opacity-100`}>
+            <Image 
+                src="/camping.png"
+                alt="Category - Camping"
+                width={20}
+                height={20}
+            />
+            <span className="text-xs">Camping</span>
+        </div>
+        <div 
+            onClick={() => _setCategory('Castle')}
+            className={`pb-4 flex flex-col items-center space-y-2 border-b-2 ${category == 'Castle' ? 'border-black' : 'border-white'} opacity-60 hover:border-gray-200 hover:opacity-100`}>
+            <Image 
+                src="/castle.png"
+                alt="Category - Castle"
+                width={20}
+                height={20}
+            />
+            <span className="text-xs">Castle</span>
         </div>
 
     </div>
