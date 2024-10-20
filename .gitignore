@@ -88,4 +88,4 @@ docs/_build/
 # Environments from conda
 *.conda
 *.env
-*.yml
+
