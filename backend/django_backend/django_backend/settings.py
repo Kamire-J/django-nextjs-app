@@ -21,7 +21,10 @@ AUTH_USER_MODEL = "useraccount.User"
 
 SITE_ID = 1
 
-WEBSITE_URL = os.environ.get("WEBSITE_URL")
+if DEBUG:
+    WEBSITE_URL = os.environ.get("WEBSITE_URL", "http://localhost:8000")
+else: 
+    WEBSITE_URL = 'https://www.devprattle.com'
 
 CHANNEL_LAYERS = {
     'default':{
@@ -55,6 +58,8 @@ REST_FRAMEWORK = {
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:8000",
+    "https://www.devprattle.com", 
+    "http://www.devprattle.com:1337",
 ]
 
 # CORS_ALLOW_ALL_ORIGINS = True
