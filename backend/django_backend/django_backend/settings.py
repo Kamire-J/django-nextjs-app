@@ -17,6 +17,8 @@ DEBUG = bool(os.environ.get("DEBUG", default=0))
 
 ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
 
+print("DJANGO_ALLOWED_HOSTS:", os.environ.get("DJANGO_ALLOWED_HOSTS"))
+
 AUTH_USER_MODEL = "useraccount.User"
 
 SITE_ID = 1
