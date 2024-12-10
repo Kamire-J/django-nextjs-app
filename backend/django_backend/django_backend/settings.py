@@ -58,7 +58,7 @@ REST_FRAMEWORK = {
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:8000",
-    "http://demo.devprattle.com/", 
+    "http://demo.devprattle.com", 
     "http://demo.devprattle.com:1337",
 ]
 
