@@ -67,7 +67,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://demo.devprattle.com:1337",
 ]
 
-CORS_TRUSTED_ORIGINS = [
+CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:8000",
     "https://demo.devprattle.com/", 
