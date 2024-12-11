@@ -18,7 +18,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(os.environ.get("DEBUG", default=0))
 
-ALLOWED_HOSTS = ['demo.devprattle.com', 'localhost', '127.0.0.1'] #os.environ.get("DJANGO_ALLOWED_HOSTS", "").split(" ")
+ALLOWED_HOSTS = ['demo.devprattle.com', 'https://demo.devprattle.com', 'localhost', '127.0.0.1'] #os.environ.get("DJANGO_ALLOWED_HOSTS", "").split(" ")
 
 print("DJANGO_ALLOWED_HOSTS:", os.environ.get("DJANGO_ALLOWED_HOSTS"))
 
@@ -29,7 +29,7 @@ SITE_ID = 1
 if DEBUG:
     WEBSITE_URL = os.environ.get("WEBSITE_URL", "http://localhost:8000")
 else: 
-    WEBSITE_URL = 'http://demo.devprattle.com/'
+    WEBSITE_URL = 'https://demo.devprattle.com/'
 
 CHANNEL_LAYERS = {
     'default':{
@@ -70,8 +70,8 @@ CORS_ALLOWED_ORIGINS = [
 CORS_TRUSTED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:8000",
-    "http://demo.devprattle.com/", 
-    "http://demo.devprattle.com:1337",
+    "https://demo.devprattle.com/", 
+    "https://demo.devprattle.com:1337",
 ]
 
 CORS_ORIGINS_WHITELIST = [
