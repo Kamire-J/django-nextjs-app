@@ -27,8 +27,8 @@ const useSearchModal = create<SearchModalStore>((set) => ({
     setQuery: (query: SearchQuery) => set({query: query}),
     query: {
         country:'',
-        checkIn: null,
-        checkOut: null,
+        checkIn: undefined,
+        checkOut: undefined,
         guests: 1,
         bedrooms: 0,
         bathrooms: 1,
