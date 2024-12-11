@@ -89,3 +89,5 @@ docs/_build/
 *.conda
 *.env
 
+# local env files
+.env*.local

@@ -15,8 +15,8 @@ const nextConfig = {
             },
             {
                 protocol:'http',
-                hostname: '127.0.0.1',
-                port: '8000',
+                hostname: 'demo.devprattle.com',
+                port: '1337',
                 pathname: '/**'
             },
         ],
