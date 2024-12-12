@@ -70,14 +70,14 @@ CORS_ALLOWED_ORIGINS = [
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:8000",
-    "http://demo.devprattle.com/", 
+    "http://demo.devprattle.com", 
     "http://demo.devprattle.com:1337",
 ]
 
 CORS_ORIGINS_WHITELIST = [
     "http://localhost:3000",
     "http://localhost:8000",
-    "http://demo.devprattle.com/", 
+    "http://demo.devprattle.com", 
     "http://demo.devprattle.com:1337",
 ]
 
