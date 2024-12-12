@@ -28,7 +28,7 @@ SITE_ID = 1
 if DEBUG:
     WEBSITE_URL = os.environ.get("WEBSITE_URL", "http://localhost:8000")
 else: 
-    WEBSITE_URL = 'https://demo.devprattle.com:1337'
+    WEBSITE_URL = 'http://demo.devprattle.com:1337'
 
 CHANNEL_LAYERS = {
     'default':{
