@@ -27,8 +27,8 @@ const ConversationDetail: React.FC<ConversationDetailProps> = ({
   const { sendJsonMessage, lastJsonMessage, readyState } = useWebSocket(`${process.env.NEXT_PUBLIC_WS_HOST}/ws/${conversation.id}/?token=${token}`, {
     share: false,
     shouldReconnect: () => true,
-    },
-  )
+  },
+)
 
   useEffect(() => {
     console.log("Connection state changed", readyState)
