@@ -16,11 +16,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG", default=False)
+DEBUG = False
 
 ALLOWED_HOSTS = ['demo.devprattle.com', 'https://demo.devprattle.com', 'localhost', '127.0.0.1'] #os.environ.get("DJANGO_ALLOWED_HOSTS", "").split(" ")
 
-print("DJANGO_ALLOWED_HOSTS:", os.environ.get("DJANGO_ALLOWED_HOSTS"))
 
 AUTH_USER_MODEL = "useraccount.User"
 
