@@ -2,14 +2,14 @@ services:
   caddy:
     image: caddy:latest
     ports:
-      - "443:443"
-      - "80:80"
+      - "8080:80"   # Use port 8080 for HTTP
+      - "8443:443"  # Use port 8443 for HTTPS
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
       - media_volume:/usr/src/django_backend/media
       - static_volume:/usr/src/django_backend/static
-      - caddy_data:/data  # Persistent data for TLS certificates
-      - caddy_config:/config  # Persistent data for Caddy config
+      - caddy_data:/data
+      - caddy_config:/config
     depends_on:
       - web
       - daphne
