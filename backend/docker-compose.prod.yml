@@ -2,15 +2,13 @@ services:
   nginx:
     build: ./nginx
     ports:
-      - "443:443"
-      - "80:80"
+      - 1337:80
     depends_on:
       - web 
     volumes:
       - media_volume:/usr/src/django_backend/media
       - static_volume:/usr/src/django_backend/static
-      - ./letsencrypt:/etc/letsencrypt  # Mount Certbot certificates
-
+      - ./letsencrypt:/etc/letsencrypt
   web:
     build: ./django_backend
     command: gunicorn django_backend.wsgi:application --bind 0.0.0.0:8000
@@ -25,13 +23,11 @@ services:
     depends_on:
       - db 
       - daphne
-
   daphne:
     build: ./django_backend
     command: daphne --bind 0.0.0.0 -p 8002 django_backend.asgi:application 
     ports:
-      - "8002:8002"
-
+      - 8002:8002
   db:
     image: postgres:15
     volumes:
