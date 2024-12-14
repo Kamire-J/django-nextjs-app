@@ -1,14 +1,19 @@
 services:
-  nginx:
-    build: ./nginx
+  caddy:
+    image: caddy:latest
     ports:
-      - 1337:80
-    depends_on:
-      - web 
+      - "443:443"
+      - "80:80"
     volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
       - media_volume:/usr/src/django_backend/media
       - static_volume:/usr/src/django_backend/static
-      - ./letsencrypt:/etc/letsencrypt
+      - caddy_data:/data  # Persistent data for TLS certificates
+      - caddy_config:/config  # Persistent data for Caddy config
+    depends_on:
+      - web
+      - daphne
+
   web:
     build: ./django_backend
     command: gunicorn django_backend.wsgi:application --bind 0.0.0.0:8000
@@ -21,13 +26,14 @@ services:
     env_file:
       - ./.env.dev
     depends_on:
-      - db 
-      - daphne
+      - db
+
   daphne:
     build: ./django_backend
-    command: daphne --bind 0.0.0.0 -p 8002 django_backend.asgi:application 
-    ports:
-      - 8002:8002
+    command: daphne --bind 0.0.0.0 -p 8002 django_backend.asgi:application
+    expose:
+      - "8002"
+
   db:
     image: postgres:15
     volumes:
@@ -35,9 +41,11 @@ services:
     environment:
       - POSTGRES_USER=postgresuser
       - POSTGRES_PASSWORD=postgrespassword
-      - POSTGRES_DB=djangobnb 
+      - POSTGRES_DB=djangobnb
 
 volumes:
   postgres_data:
   media_volume:
   static_volume:
+  caddy_data:
+  caddy_config:

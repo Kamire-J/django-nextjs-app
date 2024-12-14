@@ -1,0 +1,27 @@
+demo.devprattle.com:443 {
+    reverse_proxy / http://web:8000
+    reverse_proxy /ws/* 127.0.0.1:8002 {
+        header_up Host {host}
+        header_up X-Forwarded-For {remote}
+        transport http {
+            compression off
+            keepalive off
+        }
+    }
+
+    file_server /media/* browse {
+        root /usr/src/django_backend/media/
+    }
+
+    file_server /static/* browse {
+        root /usr/src/django_backend/static/
+    }
+
+    tls {
+        on_demand
+    }
+}
+
+demo.devprattle.com:80 {
+    redir https://{host}{uri}
+}
