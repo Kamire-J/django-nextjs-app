@@ -28,7 +28,7 @@ SITE_ID = 1
 if DEBUG:
     WEBSITE_URL = os.environ.get("WEBSITE_URL", "http://localhost:8000")
 else: 
-    WEBSITE_URL = 'https://demo.devprattle.com:1337'
+    WEBSITE_URL = 'http://demo.devprattle.com:1337'
 
 CHANNEL_LAYERS = {
     'default':{
@@ -62,15 +62,15 @@ REST_FRAMEWORK = {
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:8000",
-    "https://demo.devprattle.com", 
-    "https://demo.devprattle.com:1337",
+    "http://demo.devprattle.com", 
+    "http://demo.devprattle.com:1337",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:8000",
-    "https://demo.devprattle.com", 
-    "https://demo.devprattle.com:1337",
+    "http://demo.devprattle.com", 
+    "http://demo.devprattle.com:1337",
 ]
 
 CORS_ORIGINS_WHITELIST = [
