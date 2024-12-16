@@ -10,13 +10,11 @@ const nextConfig = {
             {
                 protocol:'http',
                 hostname: 'demo.devprattle.com',
-                port: '1337',
                 pathname: '/**'
             },
             {
                 protocol:'https',
                 hostname: 'api.devprattle.com',
-                port: '1337',
                 pathname: '/**'
             },
             {
