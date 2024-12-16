@@ -18,7 +18,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['demo.devprattle.com', 'https://demo.devprattle.com', 'localhost', '127.0.0.1'] #os.environ.get("DJANGO_ALLOWED_HOSTS", "").split(" ")
+ALLOWED_HOSTS = ['api.devprattle.com', 'https://demo.devprattle.com', 'localhost', '127.0.0.1'] #os.environ.get("DJANGO_ALLOWED_HOSTS", "").split(" ")
 
 
 AUTH_USER_MODEL = "useraccount.User"
@@ -28,7 +28,7 @@ SITE_ID = 1
 if DEBUG:
     WEBSITE_URL = os.environ.get("WEBSITE_URL", "http://localhost:8000")
 else: 
-    WEBSITE_URL = 'http://demo.devprattle.com:1337'
+    WEBSITE_URL = 'https://api.devprattle.com'
 
 CHANNEL_LAYERS = {
     'default':{
@@ -62,22 +62,22 @@ REST_FRAMEWORK = {
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:8000",
-    "http://demo.devprattle.com", 
-    "http://demo.devprattle.com:1337",
+    "https://demo.devprattle.com", 
+    "https://api.devprattle.com",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:8000",
-    "http://demo.devprattle.com", 
-    "http://demo.devprattle.com:1337",
+    "https://demo.devprattle.com", 
+    "https://api.devprattle.com",
 ]
 
 CORS_ORIGINS_WHITELIST = [
     "http://localhost:3000",
     "http://localhost:8000",
     "https://demo.devprattle.com", 
-    "https://demo.devprattle.com:1337",
+    "https://api.devprattle.com",
 ]
 
 # CORS_ALLOW_ALL_ORIGINS = True
